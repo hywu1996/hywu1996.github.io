@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "org.oma.oma_app_devel",
+    "package_name": "org.oma.oma_app",
     "sha256_cert_fingerprints":
     [
       "49:D8:B5:3A:43:83:86:90:71:EA:96:D2:F5:EA:87:34:71:63:97:33:C7:8E:66:88:8F:A0:10:DE:10:75:05:8B",
