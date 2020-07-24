@@ -1,15 +1,116 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  	<head>
+    	<meta charset="utf-8">
+    	<title>Western WebLogin - Log In</title>
+	<link rel="stylesheet" type="text/css" href="/idp/css/adt-styles.css">
+	<link rel="stylesheet" type="text/css" href="/idp/css/standard-menu.css">
+	<link rel="stylesheet" type="text/css" href="/idp/css/styles.css">
+	<link href="/idp/images/apple-icon.png" rel="apple-touch-icon">
+		<link href="/idp/images/favicon.ico" rel="shortcut icon">
+		<script src="/idp/js/jquery-1.js"></script>
+		<script src="/idp/js/jquery-ui.js"></script>
+		<script src="/idp/js/adt-contactForm.js"></script>
+		<noscript>
+			<link href="/idp/css/adt-noscript-styles.css" rel="stylesheet">
+		</noscript>
+  	</head>
+  	<body id="homepage">
+	
+	<!--masthead-->
+    <div id="masthead">
+        <h1>Western WebLogin</h1>
+	</div>
+    <!--end div masthead-->
+	
+    <div class="container_12">
+             <div class="grid_12">
+        <ul class="clearfix" id="menu">	
+		</ul>
+        </div><!--end div grid_12-->
+        
+		<div class="adt-mainContentArea">
+			<div class="grid_9">
+				<h3 class="title-bar-grey">Log In</h3>
+                           
+                <!-- Check for Authentication errors -->                           
+                
+                
+                     
+                     <div id="adt-fullPageLogin">
+                       <!-- The form tag -->       
+						<form action="/idp/profile/SAML2/POST/SSO?execution=e2s1" method="post" id="signInForm" class="adt-form adt-stacked">
+						<fieldset>
+							<!-- Display the login input fields here -->    
+							<div class="adt-labelContainer">
+								<label for="j_username">User ID</label>
+							</div>                   
+							<div class="adt-inputContainer">
+							<input name="j_username" id="j_username" autocapitalize="off" class="login" autofocus="" required="" type="text">
+							</div>
+                        
+							<div class="adt-labelContainer">
+								<label for="j_password">Password</label>
+							</div>                    
+							<div class="adt-inputContainer">
+							<input name="j_password" id="j_password" value="" required="" type="password">
+							</div>
+                        
+							<div class="adt-buttonContainer">
+								<input  class="adt-primaryAction" type="submit" name="_eventId_proceed" value="Login">
+							</div>
+						</fieldset>      
+						</form>
+					</div>	  <!-- end of adt-fullPageLogin -->
+			</div>        <!-- end of grid_9-->
+              
+            
+          <!-- Sidebar Component -->
+		  <div class="grid_3" id="sidebar" style="margin: 0;">
+		
+              <p>Western WebLogin service provides a single place for you to securely identify yourself to web services sponsored by Western.</p>
+                
+            <p><a href="http://wts.uwo.ca/weblogin/index.html" target="_blank">About Western WebLogin</a></p>
+              <p><a href="http://wts.uwo.ca/weblogin/list_of_services.html" target="_blank">List of WebLogin Services</a></p>
+              <p><a href="http://wts.uwo.ca/weblogin/faq.html" target="_blank">WebLogin FAQ's</a></p>
+		  </div>       <!-- end of Sidebar Component -->	
+        </div>        <!-- end of adt-mainContentArea-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+		<!-- Footer Component -->
+        <div class="grid_12" id="footer">
+            <div class="grid_5">
+                <p class="copyright">© 1878 - 2018 Western University</p>
+				<p class="footercontact">
+					<a href="http://wts.uwo.ca/" target="_blank">Western Technology Services</a><br>
+					1151 Richmond Street<br>
+                    London, Ontario, Canada, N6A 3K7<br>
+                    Tel: 519-661-2111<br>
+					<a href="http://wts.uwo.ca/about-wts/contact.html">Contact Us</a><br>
+					<a href="http://www.uwo.ca/privacy/index.html" title="Privacy" target="_blank">Privacy</a> |
+					<a href="http://communications.uwo.ca/comms/web_design/standards/index.html" title="Web Standards" target="_blank">Web Standards</a> |
+					<a href="http://communications.uwo.ca/comms/terms_of_use.html" title="Terms of Use" target="_blank">Terms of Use</a>  | 
+					<a href="http://accessibility.uwo.ca/" target="_blank">Accessibility</a><br>
+					Mar 27, 2018 - [shibprd1.vm.its.uwo.pri]
+				</p>
+            </div>
 
-<body>
-HI THERE
-</body>
+            <div class="grid_4">
+				&nbsp;
+            </div>
 
-</html>
+            <div class="footer-logos">
+                <a href="http://www.uwo.ca/" title="Western Home Page" target="_blank"><img alt="Western University Crest" title="Western University Crest" id="footer-logo" src="/idp/images/crest-stack-3.png" height="85" width="80"></a>
+            </div>
+
+        </div>            <!-- end of Footer Component -->
+
+        <div class="clear"></div>
+    </div>                <!--end div grid_12-->
+	<div class="clear"></div>
+                    <!--end div wrapper-->
+<div class="clear"></div>
+
+  
+
+</body></html>
