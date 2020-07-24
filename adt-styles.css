@@ -1,0 +1,1450 @@
+/**************************************
+ WTS's Application Development Team's
+ Custom Stylesheet for Web Applications
+
+ v1.5
+**************************************/
+
+body {  
+    border-top: 4px solid #4e2583;
+}
+.center {
+    text-align:center;
+}
+/** no longer needed; produces too much space
+a[target="_blank"] {
+        margin-right:1em;
+}
+*/
+a[target="_blank"]:after {
+    content:" ";
+    display:inline-block;
+    width:15px;
+    height:10px;
+    background:transparent right center no-repeat url('../images/ex-link-alt.png');
+}
+/** styles the external link image from menu links without ex-link image  **/
+#menu li.small a[target="_blank"]:after, #menu li.medium a[target="_blank"]:after {
+    content:" ";
+    background:transparent right center no-repeat url('../images/ex-link.png');
+}
+#menu li.small:hover a[target="_blank"]:after, #menu li.medium:hover a[target="_blank"]:after {
+    content:" ";
+    background:transparent right center no-repeat url('../images/ex-link-alt.png');
+}
+
+/** removes external link image from menu links with ex-link image already  **/
+#menu li.small a.ex-link[target="_blank"], #menu li.medium a.ex-link[target="_blank"] {
+    margin-right:0;
+}
+#menu li.small a.ex-link[target="_blank"]:after, #menu li.medium a.ex-link[target="_blank"]:after {
+    content:"";
+    display:inline;
+    width:0;
+    height:0;
+    background:none; 
+}
+
+#menu li:hover div a:hover {
+    /* color:#029feb; */  /* Causes contrast errors - very log contrast */
+    color:#0272aa;
+    /*color:#005a96;*/
+}
+#footer {
+    margin-top:10px; /*overrides Western template*/
+    padding-bottom:10px; /*overrides Western template*/
+}
+
+#footer a[target="_blank"] {
+    margin-right:0.25em;
+}
+#footer a[target="_blank"]:after {
+    content:" ";
+    background:transparent right center no-repeat url('../images/ex-link.png');
+}
+#footer a[title="Western Home Page"]:after {
+    background:none; /** removes external link images from Western logo **/
+}
+.invalidField {
+    border:1px solid #900;
+    background-color:#fdd;
+}
+/** override Western template label error styling **/
+.adt-form label.error {
+    padding-left:0;
+    color:#900;
+}
+
+.adt-mainContentArea ul, .adt-mainContentArea ol {
+    margin:20px 0 20px 30px;
+}
+.adt-mainContentArea ul li {
+    list-style:disc;
+}
+.adt-mainContentArea ol li {
+    list-style:decimal;
+}
+#sidebar {
+    margin:0;
+}
+
+/** ADT Form Styles
+  * - basic styles for form elements 
+  **/
+.adt-form {
+    display:block;
+    width:100%;
+    margin:0 auto;
+}
+.adt-form fieldset {
+    position:relative;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding:1em;
+    border:0 none;
+}
+.ie7 .adt-form fieldset {
+    position:relative;
+    border:0 none;
+    margin-bottom:20px;
+}
+.adt-form legend {
+    display:none;
+    margin:0 auto 0 10px;
+} 
+.ie8 .adt-form legend, .ie9 .adt-form legend {
+    display:none;
+}
+.adt-form ol.adt-formOrder, .adt-form ol.adt-formOrder > li {
+    margin:0;
+    padding:0;
+    list-style:none outside none;
+}
+.adt-form label, .adt-form .adt-formGroupLabel {
+    display:inline-block;
+    margin:1em 0 0 0;
+    line-height:1.6;
+    color:#666;
+    font-weight:bold;
+}
+
+.adt-form .adt-required:after,.adt-form .adt-formGroupLabel.adt-required:after
+{
+    content:" *";
+    color:#900;	
+}
+
+.adt-form input[type="text"], .adt-form input[type="email"], .adt-form input[type="password"],
+.adt-form input[type="date"], .adt-form input[type="url"], .adt-form input[type="search"],
+.adt-form input[type="tel"], .adt-form input[type="color"], .adt-form textarea {
+    margin:0;
+    padding:5px;
+    border:1px solid #bbb;
+    box-shadow:1px 1px 2px #ccc inset;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    background-color:#fff;
+    font-family:inherit;
+    font-size:inherit;
+    color:#000;
+}
+.adt-form input[type="text"], .adt-form input[type="email"], .adt-form input[type="password"],
+.adt-form input[type="date"], .adt-form input[type="url"], .adt-form input[type="search"],
+.adt-form input[type="tel"], .adt-form input[type="color"] {
+    height:2em;
+}
+.adt-form textarea {
+    height:6em;
+}
+
+/* Disabled textual form fields */
+.adt-form input[type="text"]:disabled,
+.adt-form input[type="email"]:disabled,
+.adt-form input[type="password"]:disabled,
+.adt-form input[type="date"]:disabled,
+.adt-form input[type="url"]:disabled,
+.adt-form input[type="search"]:disabled,
+.adt-form input[type="tel"]:disabled,
+.adt-form input[type="color"]:disabled,
+.adt-form textarea:disabled
+{
+    background-color:#eee;
+    color:#424242;
+}
+
+.adt-form input[type="checkbox"], .adt-form input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    margin-top:10px;
+}
+.adt-form input[type="checkbox"] {
+    position:relative;
+    bottom:1px;
+}
+.adt-form .adt-radioAndCheckboxParallelGroupContainer label, 
+.adt-form .adt-radioAndCheckboxStackedGroupContainer label 
+{
+    margin-top:0;
+    font-weight:normal;
+}
+.adt-form .adt-radioAndCheckboxParallelGroupContainer label 
+{
+    margin-right:1em; /* add space between parallel items; don't add to stacked group container because it affects inline in IE when stacked */
+}
+.adt-form .adt-radioAndCheckboxStackedGroupContainer label {
+    display:inline; 
+}
+.adt-form .adt-radioAndCheckboxStackedGroupContainer label:after {
+    content:"\A";
+    white-space:pre;
+}
+.adt-form .adt-radioAndCheckboxParallelGroupContainer input[type="radio"], 
+.adt-form .adt-radioAndCheckboxStackedGroupContainer input[type="radio"] {
+    display:inline-block; 
+}
+
+/* standardize input buttons across browsers and operating systems */
+.adt-form input[type="submit"],.adt-form input[type="button"],.adt-form input[type="reset"] {
+    display:inline-block;
+    width:auto;
+    margin: 10px 3px 10px 0;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius:4px;
+    background: #fefefe;
+    background: -moz-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #eee));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: linear-gradient(#fefefe 0%, #eee 100%);
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+    text-shadow: 0 2px 3px #fff;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.adt-form input[type="submit"]:hover,.adt-form input[type="button"]:hover,.adt-form input[type="reset"]:hover,
+.adt-form input[type="submit"]:focus,.adt-form input[type="button"]:focus,.adt-form input[type="reset"]:focus 
+{
+    background: #eee;
+    background: -moz-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #d7d7d7));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: linear-gradient(#fefefe 0%, #d7d7d7 100%);
+    border-color:#bbb;
+}
+.adt-form input[type="submit"]:active,.adt-form input[type="button"]:active,.adt-form input[type="reset"]:active 
+{
+    background: #d7d7d7;
+    background: -moz-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #d7d7d7));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: linear-gradient(#fefefe 0%, #d7d7d7 100%);
+    border-color:#bbb;
+    box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.4) inset;
+}
+.adt-form input[type="submit"][disabled="disabled"],
+.adt-form input[type="button"][disabled="disabled"],
+.adt-form input[type="reset"][disabled="disabled"],
+.adt-form input[type="submit"][disabled="true"],
+.adt-form input[type="button"][disabled="true"],
+.adt-form input[type="reset"][disabled="true"],
+.adt-form input[type="submit"][class="disabled"],
+.adt-form input[type="button"][class="disabled"],
+.adt-form input[type="reset"][class="disabled"],
+input[type="submit"][disabled="true"],
+input[type="button"][disabled="true"],
+input[type="reset"][disabled="true"],
+input[type="submit"][disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][class="disabled"],
+input[type="button"][class="disabled"],
+input[type="reset"][class="disabled"],
+.adt-form input[type="submit"][disabled="disabled"]:hover,
+.adt-form input[type="button"][disabled="disabled"]:hover,
+.adt-form input[type="reset"][disabled="disabled"]:hover,
+.adt-form input[type="submit"][disabled="true"]:hover,
+.adt-form input[type="button"][disabled="true"]:hover,
+.adt-form input[type="reset"][disabled="true"]:hover,
+.adt-form input[type="submit"][class="disabled"]:hover,
+.adt-form input[type="button"][class="disabled"]:hover,
+.adt-form input[type="reset"][class="disabled"]:hover,
+input[type="submit"][disabled="true"]:hover,
+input[type="button"][disabled="true"]:hover,
+input[type="reset"][disabled="true"]:hover,
+input[type="submit"][disabled]:hover,
+input[type="button"][disabled]:hover,
+input[type="reset"][disabled]:hover,
+input[type="submit"][class="disabled"]:hover,
+input[type="button"][class="disabled"]:hover,
+input[type="reset"][class="disabled"]:hover,
+.adt-form input[type="submit"][disabled="disabled"]:active,
+.adt-form input[type="button"][disabled="disabled"]:active,
+.adt-form input[type="reset"][disabled="disabled"]:active,
+.adt-form input[type="submit"][disabled="true"]:active,
+.adt-form input[type="button"][disabled="true"]:active,
+.adt-form input[type="reset"][disabled="true"]:active,
+.adt-form input[type="submit"][class="disabled"]:active,
+.adt-form input[type="button"][class="disabled"]:active,
+.adt-form input[type="reset"][class="disabled"]:active,
+input[type="submit"][disabled="true"]:active,
+input[type="button"][disabled="true"]:active,
+input[type="reset"][disabled="true"]:active,
+input[type="submit"][disabled]:active,
+input[type="button"][disabled]:active,
+input[type="reset"][disabled]:active,
+input[type="submit"][class="disabled"]:active,
+input[type="button"][class="disabled"]:active,
+input[type="reset"][class="disabled"]:active,
+.adt-form input[type="submit"][disabled="disabled"]:focus,
+.adt-form input[type="button"][disabled="disabled"]:focus,
+.adt-form input[type="reset"][disabled="disabled"]:focus,
+.adt-form input[type="submit"][disabled="true"]:focus,
+.adt-form input[type="button"][disabled="true"]:focus,
+.adt-form input[type="reset"][disabled="true"]:focus,
+.adt-form input[type="submit"][class="disabled"]:focus,
+.adt-form input[type="button"][class="disabled"]:focus,
+.adt-form input[type="reset"][class="disabled"]:focus,
+input[type="submit"][disabled="true"]:focus,
+input[type="button"][disabled="true"]:focus,
+input[type="reset"][disabled="true"]:focus,
+input[type="submit"][disabled]:focus,
+input[type="button"][disabled]:focus,
+input[type="reset"][disabled]:focus,
+input[type="submit"][class="disabled"]:focus,
+input[type="button"][class="disabled"]:focus,
+input[type="reset"][class="disabled"]:focus
+{
+    background: #eee;
+    border-color:#ddd;
+    box-shadow:none;
+    color: #bbb;
+    cursor: default;
+}
+
+/* Primary buttons */
+.adt-form input[type="submit"].adt-primaryAction,.adt-form input[type="button"].adt-primaryAction,.adt-form input[type="reset"].adt-primaryAction 
+{
+    float:right;
+    border-color:#4f2683;
+    background:#4f2683;
+    background: -moz-linear-gradient(top, #6e43a5 0%, #4f2683 80%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6e43a5),color-stop(80%, #4f2683));
+    background: -webkit-linear-gradient(top, #6e43a5 0%, #4f2683 80%);
+    background: -o-linear-gradient(top, #6e43a5 0%, #4f2683 80%);
+    background: -ms-linear-gradient(top, #6e43a5 0%, #4f2683 80%);
+    background: linear-gradient(#6e43a5 0%, #4f2683 80%);
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    color:#fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.adt-form input[type="submit"].adt-primaryAction:hover,.adt-form input[type="button"].adt-primaryAction:hover,.adt-form input[type="reset"].adt-primaryAction:hover,
+.adt-form input[type="submit"].adt-primaryAction:focus,.adt-form input[type="button"].adt-primaryAction:focus,.adt-form input[type="reset"].adt-primaryAction:focus 
+{
+    background:#552c8a;
+    background: -moz-linear-gradient(top, #552c8a 0%, #4f2683 80%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #552c8a), color-stop(80%, #4f2683));
+    background: -webkit-linear-gradient(top, #552c8a 0%, #4f2683 80%);
+    background: -o-linear-gradient(top, #552c8a 0%, #4f2683 80%);
+    background: -ms-linear-gradient(top, #552c8a 0%, #4f2683 80%);
+    background: linear-gradient(#552c8a 0%, #4f2683 80%);
+}
+.adt-form input[type="submit"].adt-primaryAction:active,.adt-form input[type="button"].adt-primaryAction:active,.adt-form input[type="reset"].adt-primaryAction:active 
+{
+    background:#452e62;
+    background: -moz-linear-gradient(top, #452e62 0%, #4f2683 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #452e62), color-stop(100%, #4f2683));
+    background: -webkit-linear-gradient(top, #452e62 0%, #4f2683 100%);
+    background: -o-linear-gradient(top, #452e62 0%, #4f2683 100%);
+    background: -ms-linear-gradient(top, #452e62 0%, #4f2683 100%);
+    background: linear-gradient(#452e62 0%, #4f2683 100%);
+    box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.6) inset;
+}
+
+/* Specialized buttons */
+.adt-form input[type="submit"].adt-goAction,.adt-form input[type="button"].adt-goAction,.adt-form input[type="reset"].adt-goAction 
+{
+    border-color:#006d08;
+    background:#1a9419;
+    background:-moz-linear-gradient(top, #1a9419 0%, #006d08 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a9419), color-stop(100%, #006d08));
+    background:-webkit-linear-gradient(top, #1a9419 0%, #006d08 100%);
+    background:-o-linear-gradient(top, #1a9419 0%, #006d08 100%);
+    background:-ms-linear-gradient(top, #1a9419 0%, #006d08 100%);
+    background:linear-gradient(#1a9419 0%, #006d08 100%);
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.adt-form input[type="submit"].adt-goAction:hover,.adt-form input[type="button"].adt-goAction:hover,.adt-form input[type="reset"].adt-goAction:hover,
+.adt-form input[type="submit"].adt-goAction:focus,.adt-form input[type="button"].adt-goAction:focus,.adt-form input[type="reset"].adt-goAction:focus
+{
+    background:#07780d;
+    background:-moz-linear-gradient(top, #07780d 0%, #006d08 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #07780d), color-stop(100%, #006d08));
+    background:-webkit-linear-gradient(top, #07780d 0%, #006d08 100%);
+    background:-o-linear-gradient(top, #07780d 0%, #006d08 100%);
+    background:-ms-linear-gradient(top, #07780d 0%, #006d08 100%);
+    background:linear-gradient(#07780d 0%, #006d08 100%);
+}
+.adt-form input[type="submit"].adt-goAction:active,.adt-form input[type="button"].adt-goAction:active,.adt-form input[type="reset"].adt-goAction:active 
+{
+    background:#234723;
+    background:linear-gradient(to bottom, #234723, #1a5c19);
+    background:-moz-linear-gradient(top, #234723 0%, #1a5c19 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #234723), color-stop(100%, #1a5c19));
+    background:-webkit-linear-gradient(top, #234723 0%, #1a5c19 100%);
+    background:-o-linear-gradient(top, #234723 0%, #1a5c19 100%);
+    background:-ms-linear-gradient(top, #234723 0%, #1a5c19 100%);
+    background:linear-gradient(#234723 0%, #1a5c19 100%);
+    box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.6) inset;	
+}
+.adt-form input[type="submit"].adt-stopAction,.adt-form input[type="button"].adt-stopAction,.adt-form input[type="reset"].adt-stopAction 
+{
+    border-color:#bc0002;
+    background:#de0002;
+    background:-moz-linear-gradient(top, #de0002 0%, #920005 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #de0002), color-stop(100%, #920005));
+    background:-webkit-linear-gradient(top, #de0002 0%, #920005 100%);
+    background:-o-linear-gradient(top, #de0002 0%, #920005 100%);
+    background:-ms-linear-gradient(top, #de0002 0%, #920005 100%);
+    background:linear-gradient(#de0002 0%, #920005 100%);
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.adt-form input[type="submit"].adt-stopAction:hover,.adt-form input[type="button"].adt-stopAction:hover,.adt-form input[type="reset"].adt-stopAction:hover 
+{
+    border-color:#920005;
+    background:#bc0002;
+    background:-moz-linear-gradient(top, #bc0002 0%, #920005 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #bc0002), color-stop(100%, #920005));
+    background:-webkit-linear-gradient(top, #bc0002 0%, #920005 100%);
+    background:-o-linear-gradient(top, #bc0002 0%, #920005 100%);
+    background:-ms-linear-gradient(top, #bc0002 0%, #920005 100%);
+    background:linear-gradient(#bc0002 0%, #920005 100%);
+}
+.adt-form input[type="submit"].adt-stopAction:active,.adt-form input[type="button"].adt-stopAction:active,.adt-form input[type="reset"].adt-stopAction:active 
+{
+    background:#630004;
+    background:-moz-linear-gradient(top, #630004 0%, #8f0002 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #630004), color-stop(100%, #8f0002));
+    background:-webkit-linear-gradient(top, #630004 0%, #8f0002 100%);
+    background:-o-linear-gradient(top, #630004 0%, #8f0002 100%);
+    background:-ms-linear-gradient(top, #630004 0%, #8f0002 100%);
+    background:linear-gradient(#630004 0%, #8f0002 100%);
+    box-shadow:0 0 8px 2px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* Disable specialized buttons */
+.adt-form input[type="submit"].adt-primaryAction[disabled="true"],
+.adt-form input[type="button"].adt-primaryAction[disabled="true"],
+.adt-form input[type="reset"].adt-primaryAction[disabled="true"],
+.adt-form input[type="submit"].adt-primaryAction[disabled],
+.adt-form input[type="button"].adt-primaryAction[disabled],
+.adt-form input[type="reset"].adt-primaryAction[disabled],
+.adt-form input[type="submit"].adt-primaryAction[class="disabled"],
+.adt-form input[type="button"].adt-primaryAction[class="disabled"],
+.adt-form input[type="reset"].adt-primaryAction[class="disabled"],
+.adt-form input[type="submit"].adt-primaryAction[disabled="true"]:hover,
+.adt-form input[type="button"].adt-primaryAction[disabled="true"]:hover,
+.adt-form input[type="reset"].adt-primaryAction[disabled="true"]:hover,
+.adt-form input[type="submit"].adt-primaryAction[disabled]:hover,
+.adt-form input[type="button"].adt-primaryAction[disabled]:hover,
+.adt-form input[type="reset"].adt-primaryAction[disabled]:hover,
+.adt-form input[type="submit"].adt-primaryAction[class="disabled"]:hover,
+.adt-form input[type="button"].adt-primaryAction[class="disabled"]:hover,
+.adt-form input[type="reset"].adt-primaryAction[class="disabled"]:hover,
+.adt-form input[type="submit"].adt-primaryAction[disabled="true"]:focus,
+.adt-form input[type="button"].adt-primaryAction[disabled="true"]:focus,
+.adt-form input[type="reset"].adt-primaryAction[disabled="true"]:focus,
+.adt-form input[type="submit"].adt-primaryAction[disabled]:focus,
+.adt-form input[type="button"].adt-primaryAction[disabled]:focus,
+.adt-form input[type="reset"].adt-primaryAction[disabled]:focus,
+.adt-form input[type="submit"].adt-primaryAction[class="disabled"]:focus,
+.adt-form input[type="button"].adt-primaryAction[class="disabled"]:focus,
+.adt-form input[type="reset"].adt-primaryAction[class="disabled"]:focus,
+.adt-form input[type="submit"].adt-primaryAction[disabled="true"]:active,
+.adt-form input[type="button"].adt-primaryAction[disabled="true"]:active,
+.adt-form input[type="reset"].adt-primaryAction[disabled="true"]:active,
+.adt-form input[type="submit"].adt-primaryAction[disabled]:active,
+.adt-form input[type="button"].adt-primaryAction[disabled]:active,
+.adt-form input[type="reset"].adt-primaryAction[disabled]:active,
+.adt-form input[type="submit"].adt-primaryAction[class="disabled"]:active,
+.adt-form input[type="button"].adt-primaryAction[class="disabled"]:active,
+.adt-form input[type="reset"].adt-primaryAction[class="disabled"]:active,
+
+.adt-form input[type="submit"].adt-goAction[disabled="true"],
+.adt-form input[type="button"].adt-goAction[disabled="true"],
+.adt-form input[type="reset"].adt-goAction[disabled="true"],
+.adt-form input[type="submit"].adt-goAction[disabled],
+.adt-form input[type="button"].adt-goAction[disabled],
+.adt-form input[type="reset"].adt-goAction[disabled],
+.adt-form input[type="submit"].adt-goAction[class="disabled"],
+.adt-form input[type="button"].adt-goAction[class="disabled"],
+.adt-form input[type="reset"].adt-goAction[class="disabled"],
+.adt-form input[type="submit"].adt-goAction[disabled="true"]:hover,
+.adt-form input[type="button"].adt-goAction[disabled="true"]:hover,
+.adt-form input[type="reset"].adt-goAction[disabled="true"]:hover,
+.adt-form input[type="submit"].adt-goAction[disabled]:hover,
+.adt-form input[type="button"].adt-goAction[disabled]:hover,
+.adt-form input[type="reset"].adt-goAction[disabled]:hover,
+.adt-form input[type="submit"].adt-goAction[class="disabled"]:hover,
+.adt-form input[type="button"].adt-goAction[class="disabled"]:hover,
+.adt-form input[type="reset"].adt-goAction[class="disabled"]:hover,
+.adt-form input[type="submit"].adt-goAction[disabled="true"]:focus,
+.adt-form input[type="button"].adt-goAction[disabled="true"]:focus,
+.adt-form input[type="reset"].adt-goAction[disabled="true"]:focus,
+.adt-form input[type="submit"].adt-goAction[disabled]:focus,
+.adt-form input[type="button"].adt-goAction[disabled]:focus,
+.adt-form input[type="reset"].adt-goAction[disabled]:focus,
+.adt-form input[type="submit"].adt-goAction[class="disabled"]:focus,
+.adt-form input[type="button"].adt-goAction[class="disabled"]:focus,
+.adt-form input[type="reset"].adt-goAction[class="disabled"]:focus,
+.adt-form input[type="submit"].adt-goAction[disabled="true"]:active,
+.adt-form input[type="button"].adt-goAction[disabled="true"]:active,
+.adt-form input[type="reset"].adt-goAction[disabled="true"]:active,
+.adt-form input[type="submit"].adt-goAction[disabled]:active,
+.adt-form input[type="button"].adt-goAction[disabled]:active,
+.adt-form input[type="reset"].adt-goAction[disabled]:active,
+.adt-form input[type="submit"].adt-goAction[class="disabled"]:active,
+.adt-form input[type="button"].adt-goAction[class="disabled"]:active,
+.adt-form input[type="reset"].adt-goAction[class="disabled"]:active,
+
+.adt-form input[type="submit"].adt-stopAction[disabled="true"],
+.adt-form input[type="button"].adt-stopAction[disabled="true"],
+.adt-form input[type="reset"].adt-stopAction[disabled="true"],
+.adt-form input[type="submit"].adt-stopAction[disabled],
+.adt-form input[type="button"].adt-stopAction[disabled],
+.adt-form input[type="reset"].adt-stopAction[disabled],
+.adt-form input[type="submit"].adt-stopAction[class="disabled"],
+.adt-form input[type="button"].adt-stopAction[class="disabled"],
+.adt-form input[type="reset"].adt-stopAction[class="disabled"],
+.adt-form input[type="submit"].adt-stopAction[disabled="true"]:hover,
+.adt-form input[type="button"].adt-stopAction[disabled="true"]:hover,
+.adt-form input[type="reset"].adt-stopAction[disabled="true"]:hover,
+.adt-form input[type="submit"].adt-stopAction[disabled]:hover,
+.adt-form input[type="button"].adt-stopAction[disabled]:hover,
+.adt-form input[type="reset"].adt-stopAction[disabled]:hover,
+.adt-form input[type="submit"].adt-stopAction[class="disabled"]:hover,
+.adt-form input[type="button"].adt-stopAction[class="disabled"]:hover,
+.adt-form input[type="reset"].adt-stopAction[class="disabled"]:hover,
+.adt-form input[type="submit"].adt-stopAction[disabled="true"]:focus,
+.adt-form input[type="button"].adt-stopAction[disabled="true"]:focus,
+.adt-form input[type="reset"].adt-stopAction[disabled="true"]:focus,
+.adt-form input[type="submit"].adt-stopAction[disabled]:focus,
+.adt-form input[type="button"].adt-stopAction[disabled]:focus,
+.adt-form input[type="reset"].adt-stopAction[disabled]:focus,
+.adt-form input[type="submit"].adt-stopAction[class="disabled"]:focus,
+.adt-form input[type="button"].adt-stopAction[class="disabled"]:focus,
+.adt-form input[type="reset"].adt-stopAction[class="disabled"]:focus,
+.adt-form input[type="submit"].adt-stopAction[disabled="true"]:active,
+.adt-form input[type="button"].adt-stopAction[disabled="true"]:active,
+.adt-form input[type="reset"].adt-stopAction[disabled="true"]:active,
+.adt-form input[type="submit"].adt-stopAction[disabled]:active,
+.adt-form input[type="button"].adt-stopAction[disabled]:active,
+.adt-form input[type="reset"].adt-stopAction[disabled]:active,
+.adt-form input[type="submit"].adt-stopAction[class="disabled"]:active,
+.adt-form input[type="button"].adt-stopAction[class="disabled"]:active,
+.adt-form input[type="reset"].adt-stopAction[class="disabled"]:active
+{
+    background: #eeeeee;
+    border-color:#ddd;
+    box-shadow:none;
+    color: #bbb;
+    text-shadow: 0 2px 3px #fff;
+    cursor: default;
+}
+
+/* button container */
+.adt-form .adt-buttonContainer {
+    display:block;
+    padding-top:1em;
+    text-align:right;
+}
+.adt-form .adt-buttonContainer:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+/** For IE 6/7 only: included to trigger hasLayout and contain floats. */
+.adt-form .adt-buttonContainer {
+    *zoom: 1;
+}
+.adt-buttonContainer input[type="submit"], .adt-buttonContainer input[type="button"], .adt-buttonContainer input[type="reset"] {
+    margin:10px 0 0 10px;
+}
+.adt-form p.adt-indicatesRequired {
+    position:relative;
+    margin:0.5em 0;
+    /*color:#999;*/
+    color: #6a6a6a;
+    text-align:left;
+}
+
+
+/** ADT Parallel Form Styles
+  * - side-by-side design for an adt-form
+  * - assumes .adt-form is also applied
+  **/
+.adt-form.adt-parallel .adt-labelContainer {
+    display:inline-block;
+    position:relative;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    width:40%;
+    margin-top:1em;
+    margin-right:-1%; /* to compensate for collapsed spaces in markup */
+    padding-right:2em;  /* gutter */
+    text-align:right;
+    vertical-align:top;
+}
+.adt-form.adt-parallel .adt-labelContainer label, .adt-form.adt-parallel .adt-formGroupLabel {
+    margin:0.3em 0;  /* to match the input height */
+    line-height:1.4em;
+}
+.adt-form.adt-parallel .adt-inputContainer,
+.adt-form.adt-parallel .adt-radioAndCheckboxParallelGroupContainer, 
+.adt-form.adt-parallel .adt-radioAndCheckboxStackedGroupContainer 
+{
+    display:inline-block;
+    position:relative;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    width:60%;
+    margin-top:1em;
+}
+
+.adt-form.adt-parallel .adt-inputContainer input[type="text"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="email"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="password"],
+.adt-form.adt-parallel .adt-inputContainer input[type="date"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="url"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="search"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="tel"], 
+.adt-form.adt-parallel .adt-inputContainer input[type="color"],
+.adt-form.adt-parallel .adt-inputContainer textarea
+{
+    min-width:50%; /* default equal width for input fields and text areas */
+}
+.adt-form.adt-parallel p.adt-indicatesRequired {
+    width:60%;
+    margin:0 auto;
+    text-align:center;
+}
+.adt-form.adt-parallel .adt-buttonContainer {
+    width:69%;
+}
+/* position the Wicket date picker: */
+.adt-form.adt-parallel .adt-inputContainer span.yui-skin-sam {
+    display:inline;
+    position:relative;
+    vertical-align:text-bottom;
+}
+
+
+/** ADT Stacked Form Styles
+  * - stacked design layout for an adt-form
+  *   (label appears on top of input element)
+  * - assumes .adt-form is also applied
+  **/
+.adt-form.adt-stacked .adt-labelContainer {
+    display:block;
+    position:relative;
+    margin:0;
+    vertical-align:top;		
+}
+.adt-form.adt-stacked .adt-inputContainer, 
+.adt-form.adt-stacked .adt-radioAndCheckboxParallelGroupContainer, 
+.adt-form.adt-stacked .adt-radioAndCheckboxStackedGroupContainer 
+{
+    display:block;
+    position:relative;
+    vertical-align:top;
+}
+.adt-form.adt-stacked input[type="text"],
+.adt-form.adt-stacked input[type="email"],
+.adt-form.adt-stacked input[type="password"],
+.adt-form.adt-stacked input[type="date"],
+.adt-form.adt-stacked input[type="url"],
+.adt-form.adt-stacked input[type="search"],
+.adt-form.adt-stacked input[type="tel"],
+.adt-form.adt-stacked input[type="color"], 
+.adt-form.adt-stacked textarea 
+{
+    display:block;
+    width:100%;
+}
+/* position the Wicket date picker: */
+.adt-form.adt-stacked .adt-inputContainer span.yui-skin-sam {
+    position:absolute;
+    top:0;
+    right:0.5em;
+}
+
+
+/** ADT Application Feedback Panel **/
+.adt-appFeedbackPanel {
+    display:block;
+    position:relative;
+    margin:10px 50px;
+    padding:5px 5px 5px 30px; /* left padding to make room for icon */
+    border:1px solid #fff;
+}
+.adt-appFeedbackPanel ul, .adt-mainContentArea .adt-appFeedbackPanel ul {
+    margin:0;
+}
+.adt-appFeedbackPanel ul li {
+    margin:5px 15px;
+    list-style:disc outside;
+}
+#masthead .adt-appFeedbackPanel ul li:only-of-type, .adt-mainContentArea .adt-appFeedbackPanel ul li:only-of-type, #footer .adt-appFeedbackPanel ul li:only-of-type, #adt-contactFormContainer .adt-appFeedbackPanel ul li:only-of-type {
+    list-style:none;
+    margin-left:0;
+}
+.adt-appFeedbackPanelSingleMessage .adt-feedbackType, .adt-appFeedbackPanelSingleMessage .adt-feedbackMessages, .adt-appFeedbackPanelSingleMessage ul, .adt-appFeedbackPanelSingleMessage ul li 
+{
+    display:inline; /* for a single message, the message, type, and image are all on the same line */
+}
+.adt-appFeedbackPanel.adt-feedbackInfo {
+    border-color:#b4c3ec;
+    background-color:#d3daee;
+}
+.adt-appFeedbackPanel.adt-feedbackWarning {
+    border-color:#f2dede;
+    background-color:#fff2b5;
+}
+.adt-appFeedbackPanel.adt-feedbackError {
+    border-color:#efb4b4;
+    background-color: #f2dede;
+}
+.adt-appFeedbackPanel.adt-feedbackSuccess {
+    border-color:#8bf099;
+    background-color:#dcf0df;
+}
+.adt-appFeedbackPanel.adt-feedbackHelp {
+    border-color:#b4c3ec;
+    background-color:#d3daee;
+}
+.adt-feedbackType 
+{
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.adt-normalText {
+	text-transform:none;
+}
+
+.adt-appFeedbackPanel .adt-feedbackType:before 
+{
+    display:inline-block;
+    position:absolute;
+    content:"";
+    width:20px;
+    height:20px;
+    left:5px;
+    font-size:0;
+}
+.adt-appFeedbackPanel.adt-feedbackInfo .adt-feedbackType:before 
+{
+    background:transparent url('../images/info.png') no-repeat left top;
+}
+.adt-appFeedbackPanel.adt-feedbackWarning .adt-feedbackType:before 
+{
+    background:transparent url('../images/warning.png') no-repeat left top;
+}
+.adt-appFeedbackPanel.adt-feedbackError .adt-feedbackType:before 
+{
+    background:transparent url('../images/error.png') no-repeat left top;
+}
+.adt-appFeedbackPanel.adt-feedbackSuccess .adt-feedbackType:before 
+{
+    background:transparent url('../images/success.png') no-repeat left top;
+}
+/* App Version and Maintenance Banners */
+#adt-appVersionWarning, #adt-appMaintenanceBanner
+{
+    position:relative;
+    padding: 10px;
+    border-bottom: 4px solid #4e2583;
+    font-weight: bold;
+    text-align: center;
+}
+#adt-appVersionWarning #adt-closeVersionBanner {
+    position:absolute;
+    display:inline-block;
+    top:5px;
+    right:10px;
+    width:18px;
+    height:18px;
+    padding:6px 12px;
+    background: #fefefe;
+    background: -moz-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #eee));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: linear-gradient(#fefefe 0%, #eee 100%);
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size:14px;
+    line-height:14px;
+    font-weight:normal;
+    color:#333;
+    text-shadow:0 2px 3px #fff;
+    text-align:center;
+}
+#adt-appVersionWarning #adt-closeVersionBanner:focus, #adt-appVersionWarning #adt-closeVersionBanner:hover
+{
+    background: #eee;
+    background: -moz-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #d7d7d7));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: linear-gradient(#fefefe 0%, #d7d7d7 100%);
+    border-color:#bbb;
+}
+#adt-appVersionWarning #adt-closeVersionBanner:active 
+{
+    background: #d7d7d7;
+    background: -moz-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #d7d7d7));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #d7d7d7 100%);
+    background: linear-gradient(#fefefe 0%, #d7d7d7 100%);
+    border-color:#bbb;
+    box-shadow:0 0 10px 2px rgba(0, 0, 0, 0.4) inset;
+}
+.adt-localVersion {
+    background-color:#900;
+    color:#fff;
+}
+.adt-devVersion, .adt-maintenanceVersion {
+    background-color:#eded00;
+}
+.adt-qatVersion {
+    background-color:#090;
+}
+.adt-breadcrumbBar {
+    font-size:0.85em;
+}
+.adt-mainContentArea .adt-breadcrumbBar ul {
+    margin:-5px 0 5px 10px;
+    list-style:none;
+}
+.adt-breadcrumbBar ul li {
+    display:inline-block;
+    margin:0;
+    padding:0 18px 0 0;
+    background:transparent right center no-repeat url('../images/paper-transp.png');
+    color:#333;
+}
+.adt-breadcrumbBar ul li:last-child {
+    background:none;
+}
+
+.ie7 #masthead {
+    margin-top:0px;
+}
+/* ==|== ::after polyfill === */
+.ie7  #adt-contactForm .required{  
+    /* creates <i class="ie-after"></i> */  
+    zoom: expression( 
+        this.runtimeStyle.zoom="1", 
+        this.appendChild( document.createElement("i") ).className="ie-after" 
+        );
+} 
+
+#masthead {
+    position:relative;
+}
+#masthead h1 {
+    margin:0;
+    padding:1.2em 5px 10px 5px;
+    font-size: 36px;
+    font-weight:normal;
+    line-height:1em;
+    color: #4F2683;
+}
+#masthead h1 a {
+    color:#4f2683;
+}
+#adt-upperLogin {
+    position:absolute;
+    top:0;
+    right:0;
+    margin:1px 0 0 0;
+    padding:7px 0;
+    text-align:right;
+}
+#adt-upperLogin form {
+    position:relative;
+    text-align:right;
+}
+#adt-upperLogin .adt-appFeedbackPanel {
+    display:block;
+    box-sizing:border-box;
+    margin:5px 0 0 0;
+    padding-bottom:4px; /*to override default padding for this panel and to compensate for image positioning */
+    text-align:left;
+}
+#adt-upperLogin label {
+    width:auto;
+    margin-top:0;
+    font-weight:normal;
+}
+#adt-upperLogin input[type="text"], #adt-upperLogin input[type="password"] {
+    display:inline-block;
+    width:7em;
+    margin:0 1.2em 0 0;
+}
+#adt-upperLogin .adt-form input.adt-primaryAction {
+    float:none;
+    margin:0;
+}
+.adt-upperLogout {
+    display:inline-block;
+    position:relative;
+    vertical-align:top;
+    height:100%;
+}
+#adt-upperLogin p {
+    margin:0;
+    text-align:right;
+}
+#adt-upperLogin .adt-upperUserAndRole {
+    display:inline-block;
+    margin:0 1em;
+    padding-right:1em;
+    border-right:1px solid #4f2683;
+}
+#adt-upperLogin .adt-userRole {
+    margin:0;
+    padding:0;
+    color:#666;
+    line-height:1.2;
+}
+#menu {
+    padding:0 4px;
+    width:932px;
+}
+#menu li:first-child, #menu li:first-child:hover {
+    margin-left:0;
+}
+li#adt-helpMenuItem {
+    float:right;
+}
+li#adt-contactMenuItem {
+    float:right;
+}
+/* remove italics from Wicket's em tag */
+#menu li .dropdown_1column li > span > em {
+    font-size:120%; /* to match standard-menu.css for #menu li.medium */
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.container_12 h3 {
+    margin-top:0;
+}
+#adt-contactForm fieldset {
+    position:relative;
+    width:32em;
+    margin:0 auto;
+    border:none;
+}
+.ie7 #adt-contactForm fieldset{
+    position:relative;
+    border:none;
+    margin-bottom:20px;
+}
+#adt-contactForm .adt-contactType {
+    padding-bottom:1em;
+    border-bottom:1px solid #ccc;
+}
+#adt-contactForm .adt-contactType label {
+    margin-top:0;
+}
+#adt-contactForm textarea {
+    width:100%;
+    height:150px;
+}
+#adt-closeContactForm {
+    display:none;
+}
+.adt-closeContactText {
+    display:none;
+}
+#adt-contactFormContainer {
+    position:relative;
+    border:1px solid #bbb;	
+    margin-bottom:1em;
+}
+#adt-contactFormContainer #adt-closeContactForm {
+    position:absolute;
+    display:inline-block;
+    top:0;
+    right:0;
+    width:18px;
+    height:18px;
+    padding:10px;
+    font-size:18px;
+    font-weight:bold;
+    text-transform:uppercase;
+    line-height:14px;
+    color:#000;
+    text-align:center;
+}
+#adt-contactFormContainer #adt-closeContactForm:link, #adt-contactFormContainer #adt-closeContactForm:visited {
+    border-bottom:1px solid transparent;
+    border-left:1px solid transparent;
+}
+#adt-contactFormContainer #adt-closeContactForm:focus, #adt-contactFormContainer #adt-closeContactForm:hover, #adt-contactFormContainer #adt-closeContactForm:active {
+    border-bottom:1px solid #bbb;
+    border-left:1px solid #bbb;
+    background-color:#ddd;
+}
+#adt-contactFormContainer .adt-closeContactText {
+    display:inline;
+}
+/***
+#adt-fullPageLogin {
+        display:block;
+        width:400px;
+        margin:50px auto;
+}
+#adt-fullPageLogin label {
+        display:inline-block;
+        width:100px;
+        height:20px;
+        margin:5px 0;
+        text-align:right;
+}
+#adt-fullPageLogin input {
+        display:inline-block;
+        width:200px;
+        margin-left:10px;
+}
+#adt-fullPageLogin input[type=submit] {
+        display:block;
+        margin:10px auto;
+        width:auto;
+}***/
+#adt-fullPageLogin {
+    width:350px;
+    margin:0 auto;
+}
+#adt-fullPageLogin input[type="text"], #adt-fullPageLogin input[type="password"] {
+    height:2.5em;
+}
+#adt-fullPageLogin .adt-appFeedbackPanel {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.adt-alert{
+    padding:4px 35px 4px 14px;
+    margin-bottom:20px;
+    margin-top: 10px;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color:#ffffff;
+    border:1px solid #4e2583;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:8px;         /* curved corners */
+    color:#4e2583;
+    width: 80%
+}
+
+.adt-alertSuccess{
+    background-color:#dcf0df;
+    border-color:#8bf099;
+    color:#4e2583;
+}
+
+.adt-alertWarning{
+    background-color:#fff2b5;
+    border-color:#e5c428;
+    color:#4e2583;
+}
+
+.adt-alertInfo{
+    background-color:#d3daee;	
+    border-color:#4f59ca;
+    color:#4e2583;
+}
+
+.adt-alertError{
+    background-color:#f2dede;
+    border-color:#ff0033;
+    color:#4e2583;
+}
+.adt-alertHelp{
+    background-color:#d3daee;
+    border-color:#e5c428;
+    color:#4e2583;
+}
+
+.adt-tableContainer {
+    border:1px solid #ccc;
+    overflow:scroll;
+    overflow:auto;
+}
+table.dataview {
+    width:100%;
+    min-width:900px; /* should be overwritten in the application per table */
+    border-collapse:collapse;
+}
+
+table.dataview a:link,table.dataview a:visited {
+    text-decoration: none;
+}
+
+table.dataview a:focus,table.dataview a:hover,table.dataview a:active {
+    text-decoration: underline;
+}
+
+table.dataview tr.odd {
+    background-color: #f3f3f3;
+}
+
+table.dataview tr.event {
+    background-color: #fff;
+}
+
+table.dataview .navigation .navigatorLabel {
+    display: inline-block;
+}
+
+table.dataview .navigation .navigator {
+    float: right;
+}
+/* to override styles from standard-menu.css for ".first" */
+table.dataview .navigation .navigator .first {
+    position: relative;
+    display: inline;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    left: auto;
+    border: 0 none;
+    opacity: 1;
+    background: transparent none;
+    transition: all 0 ease 0;
+    -moz-transition: all 0 ease 0; /* Firefox 4 */
+    -webkit-transition: all 0 ease 0; /* Safari and Chrome */
+    -o-transition: all 0 ease 0; /* Opera */
+    -ms-transition: all 0 ease 0; /*IE*/
+    transition-delay: 0;
+    -moz-transition-delay: 0; /* Firefox 4 */
+    -webkit-transition-delay: 0; /* Safari and Chrome */
+    -o-transition-delay: 0; /* Opera */
+    -ms-transition: 0;
+}
+
+table.dataview .navigation .navigator .first,table.dataview .navigation .navigator .prev,table.dataview .navigation .navigator .next,table.dataview .navigation .navigator .last
+{
+    padding: 0 5px;
+}
+
+table.dataview .navigator span.goto {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+table.dataview .navigator span em {
+    visibility: hidden;
+}
+
+table.dataview .navigator span em span {
+    padding: 0 5px;
+    font-style: normal;
+    visibility: visible;
+    font-weight: bold;
+    font-size: 16px;
+    /*vertical-align:middle;*/
+}
+
+table.dataview .navigator span a {
+    padding: 0 5px;
+}
+
+table.dataview tfoot td.export-td {
+    background-color: #dcdcdc;
+    font-weight: bold;
+}
+table.dataview input[type="button"], table.dataview input[type="submit"], table.dataview input[type="reset"] {
+    margin: 0;
+    padding: 2px 8px;
+}
+table.dataview a.wicket_orderDown {
+    padding-right:1.5em;
+    background: right center no-repeat url("../images/purpleArrow-down.png");
+}
+table.dataview a.wicket_orderUp {
+    padding-right:1.5em;
+    background: right center no-repeat url("../images/purpleArrow-up.png");
+}
+/* set minimum width on Wicket's calendar */
+span.yui-skin-sam .yui-calcontainer table.yui-calendar {
+    min-width:250px;
+}
+span.yui-skin-sam .yui-calcontainer {
+    -moz-box-shadow:3px 3px 6px #666;
+    -webkit-box-shadow:3px 3px 6px #666;
+    box-shadow:3px 3px 6px #666;
+}
+
+/*================================================================================================ */
+/*                                       NEW FOR V1.3                                              */
+/*================================================================================================ */
+
+/*----------------- Dialog and Confirm panel ------------------ */
+.adt-dialogPanel {
+    border: 1px solid #cccccc;
+    background-color:#eeeeee; 
+    padding: 10px;
+    margin-top: 10px;
+}
+.adt-dialogPanel .adt-prompt { 
+    color: #4f2683; 
+    font-weight: bold; 
+}
+.adt-dialogPanel .adt-buttonContainer {
+    padding-top: 0px;
+}
+
+.adt-form select {
+    margin:0;
+}
+
+/*----------------- Call to Action ------------------ */
+.adt-callToActionBox {
+    border-radius: 4px;
+    text-align: right;
+    color:#fff;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    line-height: 1.2;
+    background-color: #015B86;
+    margin-bottom: 0px;
+}
+
+.adt-callToActionBox p {
+    margin-bottom: 0;
+}
+
+.adt-callToActionLink {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-right: 0.2em;
+}
+
+a.adt-callToActionLink:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/*----------------- Table row highlighting ------------------ */
+.adt-clickableTable tbody tr:hover {
+    background-color: #015B86;
+    color: #ffffff;
+    text-decoration: none;               /* so that items that are not links are no underlined */
+    cursor: pointer; cursor: hand;
+}
+
+.adt-clickableTable tbody tr:hover a {
+    background-color: #015B86;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/*================================================================================================ */
+/*====================================== NEW FOR V1.4  =========================================== */
+
+/* ADT Application-wide Notification Banner */
+#adt-appNotificationBanner {
+ 	display: block;
+    background-color: #900;
+    padding: 20px;
+    color: #ffffff;
+	font-weight: bold;
+	font-size:1.75em;
+    text-align: center;
+	/*border-bottom: 3px solid #ffffff;*/
+}
+
+/******* AdtAjaxEditableLabel *******/
+.adt-editableLabel-labelContainer-inline, 
+.adt-editableLabel-editContainer-inline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+}
+  
+.adt-editableLabel-editContainer-stacked {
+}
+  
+.adt-editableLabel-label, 
+.adt-editableLabel-editor {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1; 
+}
+/*    
+.adt-editableLabel-labelContainer-inline, 
+.adt-editableLabel-labelContainer-stacked {
+    margin: 2px;
+}
+*/
+.adt-editableLabel-labelContainer-inline 
+.adt-editableLabel-label, 
+.adt-editableLabel-labelContainer-stacked 
+.adt-editableLabel-label {
+    padding-left:5px;
+}
+    
+/* Hover to show the edit icon */
+.adt-editableLabel-labelContainer-inline a.adt-editableLabel-editIcon, 
+.adt-editableLabel-labelContainer-stacked a.adt-editableLabel-editIcon {
+    display:none; 
+}
+/*
+.adt-editableLabel-labelContainer-inline:hover, 
+.adt-editableLabel-labelContainer-stacked:hover {
+    border:1px solid #aaa;
+    margin: 1px;
+}
+      
+.adt-editableLabel-labelContainer-inline:hover a.adt-editableLabel-editIcon, 
+.adt-editableLabel-labelContainer-stacked:hover a.adt-editableLabel-editIcon {
+    display:inline;
+    background-color: #ddd; 
+    padding-right: 5px;
+    border-left:1px solid #aaa;
+}
+*/
+    
+/* AdtAjaxEditableLabel save and cancel buttons */
+.adt-editableLabel-controlsContainer {
+    display:block;
+    text-align:right;
+    padding-left:5px;
+}
+  
+.adt-editableLabel-controlsContainer input[type="submit"] {
+    margin: 0;
+    padding: 3px 9px;
+}
+
+/*================================================================================================ */
+/*====================================== NEW FOR V1.5  - not ready to release yet =========================================== */
+
+.adt-reCaptcha {
+    margin: 1.2em 0;
+	padding-bottom:1em;
+    border-bottom:1px solid #ccc;
+	
+}
+
+/*
+.adt-editableLabel-labelContainer-inline, 
+.adt-editableLabel-labelContainer-stacked {
+    padding: 1px;
+}
+
+.adt-editableLabel-labelContainer-inline:hover, 
+.adt-editableLabel-labelContainer-stacked:hover {
+    border:1px solid #aaa;
+    padding: 0px;
+}
+
+.adt-editableLabel-labelContainer-inline:hover a.adt-editableLabel-editIcon, 
+.adt-editableLabel-labelContainer-stacked:hover a.adt-editableLabel-editIcon {
+	display:inline;
+    background-color: #ddd; 
+    padding-left: 2px;
+    padding-right: 2px;
+    border-left:1px solid #aaa;
+}
+*/
+/* Style the link of the label to look like normal text */
+/*.adt-editableLabel-label, .adt-editableLabel-label:hover
+{
+    color: #333;
+}
+*/
+/* Style the cancel link to look like a button */
+/*.adt-editableLabel-controlsContainer .adt-editableLabel-cancel:hover
+{
+    background: linear-gradient(#fefefe 0%, #d7d7d7 100%);
+    border-color: #bbb;
+    color: #333;
+}
+
+.adt-editableLabel-cancel
+{
+    margin: 0;
+    padding: 3px 9px;
+    
+    display: inline-block;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fefefe;
+    background: -moz-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe),color-stop(100%, #eee));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #eee 100%);
+    background: linear-gradient(#fefefe 0%, #eee 100%);
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+    text-shadow: 0 2px 3px #fff;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+}
+*/
+/* Firefox adds extra border and padding to <input> components - remove that so the cancel link and save button match */
+/*.adt-editableLabel-actionButton::-moz-focus-inner 
+{
+    border: 0; 
+    padding: 0; 
+}
+*/
+/* Disable resizing for multi-line labels' text area */
+/*.adt-editableLabel-editor
+{
+    resize: none;
+}
+*/
